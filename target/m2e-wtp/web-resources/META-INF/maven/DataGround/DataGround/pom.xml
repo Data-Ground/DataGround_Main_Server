@@ -121,4 +121,5 @@
   		<version>2.10</version>
   	</dependency>
   </dependencies>
+  <packaging>war</packaging>
 </project>
