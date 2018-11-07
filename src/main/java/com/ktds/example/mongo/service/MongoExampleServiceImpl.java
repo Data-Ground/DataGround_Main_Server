@@ -2,6 +2,7 @@ package com.ktds.example.mongo.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ktds.example.mongo.dao.MongoExampleDao;
@@ -10,6 +11,7 @@ import com.ktds.example.mongo.vo.MongoExampleVO;
 @Service
 public class MongoExampleServiceImpl implements MongoExampleService {
 
+	@Autowired
 	private MongoExampleDao mongoExampleDao;
 	
 	@Override

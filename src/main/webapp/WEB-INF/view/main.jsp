@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-메인화면
+메인화면<br>
+<a href="/DataGround/example/mongo/form">MongoDB Example</a>
 </body>
 </html>

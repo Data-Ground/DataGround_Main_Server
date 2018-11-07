@@ -12,6 +12,9 @@
 	<c:forEach var="store" items="${mongoExampleVOList }">
 		<div style="border: 1px solid black">
 			<div>
+				${store.id }
+			</div>
+			<div>
 				${store.name }
 			</div>
 			<div>
