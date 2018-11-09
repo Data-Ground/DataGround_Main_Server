@@ -32,6 +32,7 @@ public class MongoExampleDaoImpl implements MongoExampleDao {
 		for( String menu : mongoExampleVO.getMenu() ) {
 			update.addToSet("menu", menu);
 		}
+		update.set("modifyDate", mongoExampleVO.getModifyDate());
 		
 		return this.mongoTemplate.upsert(query, update, MongoExampleVO.class, "example");
 	}

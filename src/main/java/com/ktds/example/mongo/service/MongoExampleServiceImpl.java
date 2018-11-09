@@ -2,6 +2,7 @@ package com.ktds.example.mongo.service;
 
 import java.util.List;
 
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,13 @@ public class MongoExampleServiceImpl implements MongoExampleService {
 	
 	@Override
 	public boolean createMongoExampleVO(MongoExampleVO mongoExampleVO) {
+		mongoExampleVO.setWriteDate(new DateTime().now());
 		return this.mongoExampleDao.insertMongoExampleVO(mongoExampleVO) != null;
 	}
 
 	@Override
 	public boolean modifyMongoExampleVO(MongoExampleVO mongoExampleVO) {
+		mongoExampleVO.setModifyDate(new DateTime().now());
 		return this.mongoExampleDao.updateMongoExampleVO(mongoExampleVO).wasAcknowledged();
 	}
 

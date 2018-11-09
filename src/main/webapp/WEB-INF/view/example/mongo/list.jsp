@@ -12,22 +12,28 @@
 	<c:forEach var="store" items="${mongoExampleVOList }">
 		<div style="border: 1px solid black">
 			<div>
-				${store.id }
+				아이디 : ${store.id }
 			</div>
 			<div>
-				${store.name }
+				이름 : ${store.name }
 			</div>
 			<div>
-				${store.tel }
+				전화번호 : ${store.tel }
 			</div>
 			<div>
 				${store.type }
 			</div>
 			<c:forEach var="dish" items="${store.menu }">
 				<div>
-					${dish }
+					&emsp;${dish }
 				</div>
 			</c:forEach>
+			<div>
+				등록일 : ${store.writeDate.toString("y-M-d") }
+			</div>
+			<div>
+				수정일 : ${store.modifyDate.toString("y-MM-dd") }
+			</div>
 		</div>
 	</c:forEach>
 	<hr>
