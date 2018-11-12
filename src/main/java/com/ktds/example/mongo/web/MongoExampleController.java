@@ -46,6 +46,6 @@ public class MongoExampleController {
 	@PostMapping("example/mongo/delete")
 	public String doDeleteAction(MongoExampleVO mongoExampleVO) {
 		this.mongoExampleService.removeMongoExampleVO(mongoExampleVO.getId());
-		return "redirect:example/mongo/list";
+		return "redirect:/example/mongo/list";
 	}
 }
