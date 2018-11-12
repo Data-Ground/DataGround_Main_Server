@@ -38,8 +38,8 @@
     </form>
   </div>
 </nav>
-고양고양이
-<div style="font-family: '고양체'; font-size: 30px;">
+<div style="font-size: 30px;">
+	고양고양이
 	고양체└
 </div>
 <a href="/DataGround/example/mongo/form">MongoDB Example</a>
