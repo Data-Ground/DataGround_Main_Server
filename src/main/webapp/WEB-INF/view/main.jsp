@@ -23,7 +23,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="<c:url value='/shopping' />">Shopping</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
@@ -39,6 +39,7 @@
   </div>
 </nav>
 <div style="font-size: 30px;">
+	
 	고양고양이
 	고양체└
 </div>
