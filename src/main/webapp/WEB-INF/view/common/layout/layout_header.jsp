@@ -21,7 +21,7 @@ footer {
 	height: 50px;
 }
 #body-wrapper {
-
+	margin-top: 60px;
 }
 </style>
 <script src="<c:url value='/js/jquery-3.3.1.min.js' />" type="text/javascript"></script>
