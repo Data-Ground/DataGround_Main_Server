@@ -40,13 +40,12 @@
 			<bean	id="adminCheckInterceptor" 
 					class="com.ktds.common.interceptor.AdminCheckInterceptor" />
 		</mvc:interceptor>
-<!-- 		<mvc:interceptor>
-			<mvc:mapping path="/member/login" />
-			<mvc:mapping path="/member/regist" />
-			<bean	id="preventSessionInterceptor"
-					class="com.ktds.common.PreventSessionInterceptor" />
+ 		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean	id="logWriterInterceptor"
+					class="com.ktds.common.interceptor.LogWriterInterceptor" />
 		</mvc:interceptor>
- -->	</mvc:interceptors>
+	</mvc:interceptors>
 
 	<bean	id="localValidatorBean"
 			class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />

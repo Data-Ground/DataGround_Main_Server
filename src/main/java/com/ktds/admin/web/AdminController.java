@@ -11,4 +11,12 @@ public class AdminController {
 		return "admin/main";
 	}
 	
+	@RequestMapping("/admin/test")
+	public String viewTestPage() {
+		
+		Integer.parseInt("문자");
+		
+		return "admin/test";
+	}
+	
 }

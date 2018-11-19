@@ -1,9 +1,20 @@
 <configuration>
 
-	<appender name="QoS" class="ch.qos.logback.core.FileAppender">
-		<file>C:/JAVA_KTds/logs/WeGo.QoS.log</file>
+	<appender name="exception" class="ch.qos.logback.core.FileAppender">
+		<file>C:/dataground-logs/exception.log</file>
     	<encoder>
-      		<pattern>#%d{yyyy:MM:dd:HH:mm:ss}%msg%n</pattern>
+      		<pattern>Ħ%d{yyyy:MM:dd:HH:mm:ss.SSS}%msg%n</pattern>
+    	</encoder>
+  	</appender>
+  	
+  	<appender name="request" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  		<file>C:/dataground-logs/request.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>C:/dataground-logs/request.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+    	<encoder>
+      		<pattern>Ħ%d{yyyy:MM:dd:HH:mm:ss.SSS}%msg%n</pattern>
     	</encoder>
   	</appender>
 
@@ -12,24 +23,26 @@
       		<pattern>▶ %d{HH:mm:ss.SSS} %-5level %logger{0}.%method:%line - %msg%n</pattern>
     	</encoder>
   	</appender>
-  	
+
+
   	<appender name="STDOUT_File" class="ch.qos.logback.core.rolling.RollingFileAppender">
-  		<file>C:/JAVA_KTds/logs/stdout.log</file>
+  		<file>C:/dataground-logs/stdout.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>C:/JAVA_KTds/logs/stdout.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>C:/dataground-logs/stdout.%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>
     	<encoder>
       		<pattern>▶ %d{HH:mm:ss.SSS} %-5level %logger{0}.%method:%line - %msg%n</pattern>
     	</encoder>
   	</appender>
-  
+  	
+<!--   	  
 	<appender name="statistics"
 			class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>C:/JAVA_KTds/logs/statistics.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<!-- daily rollover -->
+			daily rollover
 			<fileNamePattern>C:/JAVA_KTds/logs/statistics.%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>
    	 	<encoder>
@@ -42,18 +55,22 @@
 			<file>C:/JAVA_KTds/logs/param.log</file>
 			<rollingPolicy
 				class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-				<!-- daily rollover -->
+				daily rollover
 				<fileNamePattern>C:/JAVA_KTds/logs/param.%d{yyyy-MM-dd}.log</fileNamePattern>
 			</rollingPolicy>
    	 	<encoder>
    	  	 	<pattern>Param : %d{HH:mm:ss.SSS} %logger.%method:%line %msg%n</pattern>
    	 	</encoder>
- 	</appender>
+ 	</appender> -->
 
-	<logger level="info" name="list.statistics">
-		<appender-ref ref="statistics" />
+	<logger level="error" name="com.ktds.common.exception.handler">
+		<appender-ref ref="exception" />
 	</logger>
-	
+
+	<logger level="info" name="com.ktds.common.interceptor">
+		<appender-ref ref="request" />
+	</logger>
+<!-- 	
 	<logger level="debug" name="com.ktds">
 		<appender-ref ref="param" />
 	</logger>
@@ -61,14 +78,15 @@
 	<logger level="info" name="com.ktds">
 		<appender-ref ref="QoS" />
 	</logger>
+-->
 
-<!-- 	<logger level="debug" name="org.springframework">
+	<logger level="debug" name="org.springframework">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="STDOUT_File" />
-	</logger> -->
+	</logger>
 
   	<root level="debug">
     	<appender-ref ref="STDOUT" />
-		<appender-ref ref="STDOUT_File" />
+		<appender-ref ref="STDOUT_File" /> 
   	</root>
 	</configuration>

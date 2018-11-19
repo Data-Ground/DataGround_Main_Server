@@ -1,5 +1,6 @@
 package com.ktds.common.interceptor;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +29,6 @@ public class AdminCheckInterceptor extends HandlerInterceptorAdapter {
 				return true;
 			}
 		}
-		
 		response.sendRedirect(request.getContextPath() + "/main");
 		return false;
 	}
