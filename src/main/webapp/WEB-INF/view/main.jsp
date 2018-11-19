@@ -25,10 +25,8 @@
     </form>
   </div>
 </nav>
->>>>>>> _shopping
 <div style="font-size: 30px;">
-	
-	고양고양이
+
 	고양체└
 </div>
 <a href="/DataGround/example/mongo/form">MongoDB Example</a>

@@ -42,8 +42,8 @@
 		</mvc:interceptor>
  		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<bean	id="logWriterInterceptor"
-					class="com.ktds.common.interceptor.LogWriterInterceptor" />
+			<bean	id="logWriterInterceptor"	
+							class="com.ktds.common.interceptor.LogWriterInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 
